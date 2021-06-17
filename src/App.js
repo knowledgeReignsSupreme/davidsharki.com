@@ -1,27 +1,23 @@
 import { useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
+import Home from './Home';
 
 function App() {
   const [theme, setTheme] = useState('dark');
 
-  const toggleTeem = () => {
+  const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   };
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <StyledDiv>
-        <h1>Hello world</h1>
-        <button onClick={toggleTeem}>Hey</button>
-      </StyledDiv>
+      <div>
+        <Home />
+      </div>
     </ThemeProvider>
   );
 }
-
-const StyledDiv = styled.div`
-  color: ${(props) => props.theme.header};
-`;
 
 export default App;
