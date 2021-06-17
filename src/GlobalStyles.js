@@ -20,6 +20,14 @@ export const GlobalStyles = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+  ul{
+    list-style: none;
+  }
+
+  li {
+    text-decoration: none;
+  }
   
 
 `;

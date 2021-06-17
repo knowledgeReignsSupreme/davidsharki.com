@@ -3,9 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import IDE from '../media/IDE.png';
 import { useWindowSize } from '../hooks/useWIndowSize';
 
-export default function Header({ currentTheme }) {
-  const [, windowHeight] = useWindowSize();
-
+export default function Header({ currentTheme, windowHeight }) {
   return (
     <StyledHero currentTheme={currentTheme}>
       <StyledDiv

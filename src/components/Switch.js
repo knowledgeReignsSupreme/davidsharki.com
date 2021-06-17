@@ -4,7 +4,8 @@ import styled from 'styled-components';
 export default function Switch({ currentTheme, toggleTheme }) {
   return (
     <SwitchWrapper>
-      <p>{currentTheme === 'light' ? 'Light Theme' : 'Dark Theme'}</p>
+      {/* <p>{currentTheme === 'light' ? 'Light Theme' : 'Dark Theme'}</p> */}
+      <p>Theme</p>
       <StyledSwitch currentTheme={currentTheme}>
         <input type='checkbox' onChange={toggleTheme} />
         <span />
@@ -43,6 +44,7 @@ const StyledSwitch = styled.label`
       props.currentTheme === 'dark' ? 'blue' : 'white'};
     transition: 0.4s;
     border-radius: 34px;
+
     &:before {
       position: absolute;
       content: '';
