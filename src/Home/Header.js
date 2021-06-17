@@ -1,13 +1,18 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import IDE from '../media/IDE.png';
 
-export default function Header() {
+export default function Header({ currentTheme }) {
   return (
-    <StyledDiv typeWritedSpeed={3} typeWriterChars={13}>
-      <h1>&lt;h1&gt;Hello World!&lt;/h1&gt;</h1>
-      <StyledName>I'm David</StyledName>
-      <StyledSubtitle>A full-stack web developer</StyledSubtitle>
-    </StyledDiv>
+    <StyledHero currentTheme={currentTheme}>
+      <StyledDiv currentTheme={currentTheme}>
+        <h1>
+          <span>&lt;h1&gt;</span>Hello World!<span>&lt;/h1&gt;</span>
+        </h1>
+        <StyledName>I'm David.</StyledName>
+        <StyledSubtitle>A full-stack web developer</StyledSubtitle>
+      </StyledDiv>
+    </StyledHero>
   );
 }
 
@@ -30,18 +35,42 @@ const fadeInUp = keyframes`
   }
 `;
 
+const StyledHero = styled.header`
+  position: relative;
+  min-height: 18rem;
+  width: 100%;
+
+  &::after {
+    content: '';
+    background: url(${IDE}) no-repeat center center/cover;
+    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.5 : 0.2)};
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    min-height: 18rem;
+    box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 600px) {
+      background-position: left;
+    }
+  }
+`;
+
 const StyledDiv = styled.div`
   min-height: 100vh;
-  display: grid;
-  place-content: center;
-  text-align: left;
-  @media (max-width: 600px) {
-    place-content: initial;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
   h1 {
     font-size: clamp(1rem, 3vw + 1rem, 4rem);
     position: relative;
     width: max-content;
+    color: ${(props) => props.theme.header};
 
     &::before,
     &::after {
@@ -54,42 +83,34 @@ const StyledDiv = styled.div`
     }
 
     &::before {
-      background: ${(props) => props.theme.body};
+      background-color: gray;
       animation: ${typewriter} 2s steps(24) 1s forwards;
     }
 
     &::after {
       width: 0.125em;
-      background: black;
+      background: ${(props) => props.theme.header};
       animation: ${typewriter} 2s steps(24) 1s forwards,
         ${blink} 1s steps(24) infinite;
     }
 
-    @media (max-width: 600px) {
-      max-width: 300px;
-      white-space: nowrap;
-      font-size: 1rem;
-      &::after {
-        height: 1.3rem;
-      }
+    span {
+      font-size: clamp(0.9rem, 1vw + 1rem, 4rem);
     }
+  }
+
+  p {
+    font-size: clamp(1rem, 1vw + 1rem, 3.4rem);
+    margin-top: 0.3rem;
+    opacity: 0;
+    transform: translateY(3rem);
   }
 `;
 
 const StyledName = styled.p`
-  font-size: 2rem;
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(3rem);
   animation: ${fadeInUp} 2s ease 3s forwards;
-  margin-bottom: 0;
-  margin-top: 0;
 `;
 
 const StyledSubtitle = styled.p`
-  font-size: 2rem;
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(3rem);
   animation: ${fadeInUp} 2s ease 4s forwards;
 `;

@@ -14,7 +14,7 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <div>
-        <Home />
+        <Home currentTheme={theme} />
       </div>
     </ThemeProvider>
   );
