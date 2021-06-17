@@ -1,23 +1,42 @@
 import React from 'react';
+import { FaBars } from 'react-icons/fa';
 import styled from 'styled-components';
 import { darkTheme } from '../GlobalStyles';
 import Switch from './Switch';
 
-export default function Appbar({ currentTheme, toggleTheme, sections }) {
+export default function Appbar({
+  currentTheme,
+  toggleTheme,
+  sections,
+  windowWidth,
+  toggleDropdown,
+}) {
   return (
     <NavWrapper currentTheme={currentTheme}>
       <StyledNav>
-        <ul>
-          {sections.map((lab) => (
-            <li>
-              {lab.icon} {lab.label}
-            </li>
-          ))}
-        </ul>
+        {windowWidth >= 600 ? (
+          <NavItems sections={sections} />
+        ) : (
+          <StyledBars>
+            <FaBars onClick={toggleDropdown} />
+          </StyledBars>
+        )}
         <h4>David Sharki.</h4>
         <Switch currentTheme={currentTheme} toggleTheme={toggleTheme} />
       </StyledNav>
     </NavWrapper>
+  );
+}
+
+function NavItems({ sections }) {
+  return (
+    <ul>
+      {sections.map((lab) => (
+        <li>
+          {lab.icon} {lab.label}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -55,5 +74,14 @@ const StyledNav = styled.div`
 
   h4 {
     width: 100%;
+  }
+`;
+
+const StyledBars = styled.div`
+  width: 100%;
+  svg {
+    height: 1.5rem;
+    width: 2rem;
+    cursor: pointer;
   }
 `;

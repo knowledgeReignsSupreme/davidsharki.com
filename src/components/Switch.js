@@ -5,7 +5,6 @@ export default function Switch({ currentTheme, toggleTheme }) {
   return (
     <SwitchWrapper>
       {/* <p>{currentTheme === 'light' ? 'Light Theme' : 'Dark Theme'}</p> */}
-      <p>Theme</p>
       <StyledSwitch currentTheme={currentTheme}>
         <input type='checkbox' onChange={toggleTheme} />
         <span />

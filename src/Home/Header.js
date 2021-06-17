@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import IDE from '../media/IDE.png';
-import { useWindowSize } from '../hooks/useWIndowSize';
 
 export default function Header({ currentTheme, windowHeight }) {
   return (
