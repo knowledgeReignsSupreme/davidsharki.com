@@ -1,11 +1,17 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import IDE from '../media/IDE.png';
+import { useWindowSize } from '../useWIndowSize';
 
 export default function Header({ currentTheme }) {
+  const [, windowHeight] = useWindowSize();
+
   return (
     <StyledHero currentTheme={currentTheme}>
-      <StyledDiv currentTheme={currentTheme}>
+      <StyledDiv
+        currentTheme={currentTheme}
+        style={{ height: windowHeight - 80 - 48 }}
+      >
         <h1>
           <span>&lt;h1&gt;</span>Hello World!<span>&lt;/h1&gt;</span>
         </h1>
@@ -37,13 +43,13 @@ const fadeInUp = keyframes`
 
 const StyledHero = styled.header`
   position: relative;
-  min-height: 18rem;
+  min-height: 100vh;
   width: 100%;
 
   &::after {
     content: '';
     background: url(${IDE}) no-repeat center center/cover;
-    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.5 : 0.2)};
+    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.5 : 0.12)};
     top: 0;
     left: 0;
     bottom: 0;
@@ -60,14 +66,13 @@ const StyledHero = styled.header`
 `;
 
 const StyledDiv = styled.div`
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 
   h1 {
-    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    font-size: clamp(1rem, 4vw + 1rem, 4rem);
     position: relative;
     width: max-content;
     color: ${(props) => props.theme.header};
@@ -83,7 +88,8 @@ const StyledDiv = styled.div`
     }
 
     &::before {
-      background-color: gray;
+      background-color: ${(props) =>
+        props.currentTheme === 'light' ? '#F0F0F0' : '#101010'};
       animation: ${typewriter} 2s steps(24) 1s forwards;
     }
 
@@ -100,7 +106,7 @@ const StyledDiv = styled.div`
   }
 
   p {
-    font-size: clamp(1rem, 1vw + 1rem, 3.4rem);
+    font-size: clamp(1rem, 2vw + 1rem, 3.4rem);
     margin-top: 0.3rem;
     opacity: 0;
     transform: translateY(3rem);
