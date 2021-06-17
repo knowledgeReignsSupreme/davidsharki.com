@@ -27,9 +27,9 @@ export default function Dropdown({
 const StyledDropdown = styled.div`
   width: 95%;
   margin: 0 auto;
-  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem 0;
   background: ${darkTheme.body};
   color: ${darkTheme.fontColor};
 

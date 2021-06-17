@@ -1,19 +1,24 @@
 import { useRef, useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
-import Home from './Home';
-import Appbar from './components/Appbar';
-import { FaBriefcase, FaMale } from 'react-icons/fa';
 import { useWindowSize } from './hooks/useWIndowSize';
-import Dropdown from './components/Dropdown';
 import useClickOutside from './hooks/useClickOutside';
 
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
+
+import Home from './Home';
+import Appbar from './components/Appbar';
+import Dropdown from './components/Dropdown';
+import { FaBriefcase, FaMale } from 'react-icons/fa';
+
 function App() {
+  const [theme, setTheme] = useState('dark');
+  const [showDropdown, setShowDropdown] = useState(false);
   const [windowWidth, windowHeight] = useWindowSize();
   const dropdownRef = useRef(null);
 
-  const [theme, setTheme] = useState('dark');
-  const [showDropdown, setShowDropdown] = useState(false);
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  };
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -23,10 +28,6 @@ function App() {
     setShowDropdown(false);
   };
   useClickOutside(dropdownRef, closeDropdown);
-
-  const toggleTheme = () => {
-    theme === 'light' ? setTheme('dark') : setTheme('light');
-  };
 
   const sections = [
     { icon: <FaBriefcase />, label: 'Portfolio', anchor: '#portfolio' },

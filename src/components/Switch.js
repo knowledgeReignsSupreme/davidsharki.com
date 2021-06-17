@@ -26,6 +26,7 @@ const StyledSwitch = styled.label`
   width: 60px;
   height: 34px;
   transition: 0.4s;
+
   input {
     opacity: 0;
     width: 0;
@@ -40,7 +41,7 @@ const StyledSwitch = styled.label`
     right: 0;
     bottom: 0;
     background: ${(props) =>
-      props.currentTheme === 'dark' ? 'blue' : 'white'};
+      props.currentTheme === 'dark' ? 'gray' : 'white'};
     transition: 0.4s;
     border-radius: 34px;
 

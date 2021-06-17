@@ -53,22 +53,21 @@ const StyledNav = styled.div`
   align-items: center;
   height: 4rem;
   color: ${darkTheme.fontColor};
-  font-weight: 400;
 
   ul {
     display: flex;
     width: 100%;
 
-    svg {
-      margin-right: 0.3rem;
-    }
-
     li {
       cursor: pointer;
-    }
 
-    li + li {
-      margin-left: 1rem;
+      + li {
+        margin-left: 1rem;
+      }
+
+      svg {
+        margin-right: 0.3rem;
+      }
     }
   }
 

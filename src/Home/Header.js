@@ -5,7 +5,7 @@ import IDE from '../media/IDE.png';
 export default function Header({ currentTheme, windowHeight }) {
   return (
     <StyledHero currentTheme={currentTheme}>
-      <StyledDiv
+      <StyledContent
         currentTheme={currentTheme}
         style={{ height: windowHeight - 80 - 48 }}
       >
@@ -14,7 +14,7 @@ export default function Header({ currentTheme, windowHeight }) {
         </h1>
         <StyledName>I'm David.</StyledName>
         <StyledSubtitle>A full-stack web developer</StyledSubtitle>
-      </StyledDiv>
+      </StyledContent>
     </StyledHero>
   );
 }
@@ -62,7 +62,7 @@ const StyledHero = styled.header`
   }
 `;
 
-const StyledDiv = styled.div`
+const StyledContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
