@@ -5,7 +5,7 @@ import Home from './Home';
 import Appbar from './components/Appbar';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
@@ -15,7 +15,7 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <div>
-        <Appbar currentTheme={theme} />
+        <Appbar currentTheme={theme} toggleTheme={toggleTheme} />
         <Home currentTheme={theme} />
       </div>
     </ThemeProvider>

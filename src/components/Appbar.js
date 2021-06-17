@@ -1,23 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import { darkTheme, lightTheme } from '../GlobalStyles';
-import me from '../media/me.png';
+import Switch from './Switch';
 
-export default function Appbar({ currentTheme }) {
+export default function Appbar({ currentTheme, toggleTheme }) {
   return (
     <NavWrapper currentTheme={currentTheme}>
-      <StyledNav></StyledNav>
+      <StyledNav>
+        <Switch currentTheme={currentTheme} toggleTheme={toggleTheme} />
+      </StyledNav>
     </NavWrapper>
   );
 }
 
 const NavWrapper = styled.nav`
   width: 100%;
-  background: ${(props) =>
-    props.currentTheme === 'light' ? darkTheme.body : lightTheme.body};
+  background: ${darkTheme.body};
+  height: 4rem;
 `;
 
 const StyledNav = styled.div`
   max-width: 98%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${darkTheme.fontColor};
 `;
