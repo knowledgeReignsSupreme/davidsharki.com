@@ -17,6 +17,9 @@ export const GlobalStyles = createGlobalStyle`
     font-family: "Source Code Pro", monospace;
   }
 
+  img {
+    max-width: 100%;
+  }
   
 
 `;
