@@ -4,7 +4,7 @@ import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
 import Home from './Home';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const toggleTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
