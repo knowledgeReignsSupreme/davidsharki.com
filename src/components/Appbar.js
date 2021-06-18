@@ -11,7 +11,9 @@ export default function Appbar({
   windowWidth,
   toggleDropdown,
 }) {
-  const isLightTheme = currentTheme === 'light';
+  const determineIcon = () => {
+    return currentTheme === 'light' ? <FaSun /> : <FaMoon />;
+  };
 
   return (
     <NavWrapper>
@@ -24,14 +26,9 @@ export default function Appbar({
           </StyledBars>
         )}
         <h4>David Sharki.</h4>
-        <StyledSwitch isLightTheme={isLightTheme}>
-          {isLightTheme ? <FaSun /> : <FaMoon />}
-          <Switch
-            currentTheme={currentTheme}
-            onToggle={toggleTheme}
-            color={isLightTheme ? 'orange' : 'gray'}
-            bgColor={isLightTheme ? 'white' : 'white'}
-          />
+        <StyledSwitch>
+          {determineIcon()}
+          <Switch currentTheme={currentTheme} onToggle={toggleTheme} />
         </StyledSwitch>
       </StyledNav>
     </NavWrapper>
@@ -100,10 +97,10 @@ const StyledSwitch = styled.div`
   align-items: center;
   align-content: center;
   svg {
-    margin-bottom: 0.3rem;
     font-size: 1.2rem;
-    color: ${(props) => (props.isLightTheme ? 'orange' : 'gray')};
+    color: ${(props) => props.theme.secondary};
     margin-right: 0.5rem;
     margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
   }
 `;

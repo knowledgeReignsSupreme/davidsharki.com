@@ -34,12 +34,14 @@ export const GlobalStyles = createGlobalStyle`
 
 export const lightTheme = {
   body: '#fff',
-  fontColor: '#000',
-  header: 'blue',
+  fontColor: '#3a3939',
+  main: '#344FA1',
+  secondary: '#FF884B',
 };
 
 export const darkTheme = {
   fontColor: '#fff',
-  body: '#000',
-  header: 'lightblue',
+  body: '#202020',
+  main: '#77ACF1',
+  secondary: '#AAAAAA',
 };

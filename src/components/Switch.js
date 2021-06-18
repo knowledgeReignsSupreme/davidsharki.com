@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Switch({ onToggle, color, bgColor }) {
+export default function Switch({ onToggle }) {
   return (
     <SwitchWrapper>
-      <StyledSwitch color={color} bgColor={bgColor}>
+      <StyledSwitch>
         <input type='checkbox' onChange={onToggle} />
         <span />
       </StyledSwitch>
@@ -39,7 +39,7 @@ const StyledSwitch = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${(props) => props.bgColor};
+    background: #fff;
     transition: 0.4s;
     border-radius: 34px;
 
@@ -50,7 +50,7 @@ const StyledSwitch = styled.label`
       width: 26px;
       left: 4px;
       bottom: 4px;
-      background: ${(props) => props.color};
+      background: ${(props) => props.theme.secondary};
       transition: 0.4s;
       border-radius: 50%;
     }
