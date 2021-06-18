@@ -18,7 +18,7 @@ export default function Appbar({
   return (
     <NavWrapper>
       <StyledNav>
-        {windowWidth >= 600 ? (
+        {windowWidth >= 800 ? (
           <NavItems sections={sections} />
         ) : (
           <StyledBars>
@@ -39,9 +39,11 @@ function NavItems({ sections }) {
   return (
     <ul>
       {sections.map((lab) => (
-        <li>
-          {lab.icon} {lab.label}
-        </li>
+        <a href={lab.anchor}>
+          <li>
+            {lab.icon} {lab.label}
+          </li>
+        </a>
       ))}
     </ul>
   );
@@ -69,10 +71,10 @@ const StyledNav = styled.div`
     display: flex;
     width: 100%;
 
-    li {
+    a {
       cursor: pointer;
 
-      + li {
+      + a {
         margin-left: 1rem;
       }
 

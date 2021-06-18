@@ -8,7 +8,8 @@ import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
 import Home from './Home';
 import Appbar from './components/Appbar';
 import Dropdown from './components/Dropdown';
-import { FaBriefcase, FaMale } from 'react-icons/fa';
+import { FaBriefcase, FaFilePdf, FaMale } from 'react-icons/fa';
+import MediaLinks from './components/MediaLinks';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -32,12 +33,14 @@ function App() {
   const sections = [
     { icon: <FaBriefcase />, label: 'Portfolio', anchor: '#portfolio' },
     { icon: <FaMale />, label: 'About Me', anchor: '#me' },
+    { icon: <FaFilePdf />, label: 'CV', anchor: '/cv.pdf' },
   ];
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <div>
+        <MediaLinks />
         <Appbar
           currentTheme={theme}
           toggleTheme={toggleTheme}

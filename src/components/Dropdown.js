@@ -11,7 +11,7 @@ export default function Dropdown({
 }) {
   return !show
     ? null
-    : show && windowWidth <= 600 && (
+    : show && windowWidth <= 800 && (
         <StyledDropdown ref={dropdownRef}>
           <ul>
             {sections.map((link) => (
