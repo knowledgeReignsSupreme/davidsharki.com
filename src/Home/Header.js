@@ -72,7 +72,7 @@ const StyledContent = styled.div`
     font-size: clamp(1rem, 4vw + 1rem, 4rem);
     position: relative;
     width: max-content;
-    color: ${(props) => props.theme.header};
+    color: ${(props) => props.theme.main};
 
     &::before,
     &::after {
@@ -92,7 +92,7 @@ const StyledContent = styled.div`
 
     &::after {
       width: 0.125em;
-      background: ${(props) => props.theme.header};
+      background: ${(props) => props.theme.main};
       animation: ${typewriter} 2s steps(24) 1s forwards,
         ${blink} 1s steps(24) infinite;
     }

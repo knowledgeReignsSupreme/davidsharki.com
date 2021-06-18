@@ -40,8 +40,8 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  fontColor: '#fff',
+  fontColor: '#D8E3E7',
   body: '#202020',
-  main: '#77ACF1',
+  main: '#51C4D3',
   secondary: '#AAAAAA',
 };
