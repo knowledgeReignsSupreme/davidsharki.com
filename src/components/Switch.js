@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function Switch({ currentTheme, toggleTheme }) {
+export default function Switch({ onToggle, color, bgColor }) {
   return (
     <SwitchWrapper>
-      {/* <p>{currentTheme === 'light' ? 'Light Theme' : 'Dark Theme'}</p> */}
-      <StyledSwitch currentTheme={currentTheme}>
-        <input type='checkbox' onChange={toggleTheme} />
+      <StyledSwitch color={color} bgColor={bgColor}>
+        <input type='checkbox' onChange={onToggle} />
         <span />
       </StyledSwitch>
     </SwitchWrapper>
@@ -40,8 +39,7 @@ const StyledSwitch = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${(props) =>
-      props.currentTheme === 'dark' ? 'gray' : 'white'};
+    background: ${(props) => props.bgColor};
     transition: 0.4s;
     border-radius: 34px;
 
@@ -52,8 +50,7 @@ const StyledSwitch = styled.label`
       width: 26px;
       left: 4px;
       bottom: 4px;
-      background: ${(props) =>
-        props.currentTheme === 'dark' ? 'white' : 'orange'};
+      background: ${(props) => props.color};
       transition: 0.4s;
       border-radius: 50%;
     }
