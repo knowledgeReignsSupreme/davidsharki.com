@@ -28,7 +28,7 @@ export default function Appbar({
         <h4>David Sharki.</h4>
         <StyledSwitch>
           {determineIcon()}
-          <Switch currentTheme={currentTheme} onToggle={toggleTheme} />
+          <Switch onToggle={toggleTheme} />
         </StyledSwitch>
       </StyledNav>
     </NavWrapper>

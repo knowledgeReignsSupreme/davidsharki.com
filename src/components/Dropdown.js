@@ -25,7 +25,7 @@ export default function Dropdown({
 }
 
 const StyledDropdown = styled.div`
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -33,11 +33,16 @@ const StyledDropdown = styled.div`
   background: ${darkTheme.body};
   color: ${darkTheme.fontColor};
 
-  li + li {
-    margin-top: 0.7rem;
+  li {
+    margin-left: 0.7rem;
+    cursor: pointer;
+    + li {
+      margin-top: 0.7rem;
+    }
   }
 
   svg {
     color: white;
+    margin-right: 0.3rem;
   }
 `;
