@@ -83,32 +83,33 @@ const StyledProjects = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 1rem;
 
   h3 {
     font-size: clamp(1rem, 1.5vw + 1rem, 2.8rem);
+    margin-bottom: 1rem;
   }
 `;
+
 const ProjectsWrapper = styled.div`
   max-width: 95%;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
-  gap: 2em;
   margin: 0 auto;
+  row-gap: 2rem;
+  column-gap: 2rem;
 `;
 
 const StyledProject = styled.div`
-  width: 30rem;
-  max-width: 95%;
-  box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
-
-  margin-top: 1rem;
-  padding-bottom: 2rem;
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 30rem;
+  max-width: 95%;
+  box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  padding-bottom: 2rem;
 
   img {
     height: 13rem;
