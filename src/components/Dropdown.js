@@ -14,10 +14,12 @@ export default function Dropdown({
     : show && windowWidth <= 800 && (
         <StyledDropdown ref={dropdownRef}>
           <ul>
-            {sections.map((link) => (
-              <li key={link.label} onClick={closeDropdown}>
-                {link.icon} {link.label}
-              </li>
+            {sections.map((section) => (
+              <a href={section.anchor} target='_blank' rel='noreferrer'>
+                <li key={section.label} onClick={closeDropdown}>
+                  {section.icon} {section.label}
+                </li>
+              </a>
             ))}
           </ul>
         </StyledDropdown>
@@ -37,11 +39,16 @@ const StyledDropdown = styled.div`
   top: 4rem;
   left: 0;
 
-  li {
-    margin-left: 0.7rem;
+  a {
     cursor: pointer;
-    + li {
+    padding: 0.3rem 0.6rem;
+
+    + a {
       margin-top: 0.7rem;
+    }
+
+    li {
+      margin-left: 1rem;
     }
   }
 

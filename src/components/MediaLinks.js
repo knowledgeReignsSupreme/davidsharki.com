@@ -36,22 +36,25 @@ const StyledMediaLinks = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;
-  top: 50%;
+  top: 45%;
   z-index: 10;
   width: max-content;
   height: max-content;
   background: ${(props) => props.theme.fontColor};
-  padding: 0.3rem 0.6rem;
+  padding: 0.05rem 0.1rem;
   border-radius: 10px;
   animation: ${slideFromLeft} 8s ease-out;
 
   a {
-    font-size: calc(1rem + 0.5vw);
     color: ${(props) => props.theme.main};
     display: block;
-
+    padding: 0.4rem 0.6rem;
     + a {
       margin-top: 0.5rem;
+    }
+
+    svg {
+      font-size: calc(1rem + 1vw);
     }
   }
 `;

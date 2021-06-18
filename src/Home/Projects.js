@@ -40,7 +40,7 @@ export default function Projects() {
 
   return (
     <StyledProjects>
-      <h3>Featured Projects:</h3>
+      <h3 id='projects'>Featured Projects:</h3>
       <ProjectsWrapper>
         {projects.map((project) => (
           <Project key={project.name} project={project} />

@@ -31,7 +31,7 @@ function App() {
   useClickOutside(dropdownRef, closeDropdown);
 
   const sections = [
-    { icon: <FaBriefcase />, label: 'Portfolio', anchor: '#portfolio' },
+    { icon: <FaBriefcase />, label: 'Portfolio', anchor: '#projects' },
     { icon: <FaMale />, label: 'About Me', anchor: '#me' },
     { icon: <FaFilePdf />, label: 'CV', anchor: '/cv.pdf' },
   ];
