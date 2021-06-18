@@ -42,7 +42,6 @@ const StyledDropdown = styled.div`
   }
 
   svg {
-    color: white;
     margin-right: 0.3rem;
   }
 `;
