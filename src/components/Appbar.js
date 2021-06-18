@@ -50,6 +50,10 @@ function NavItems({ sections }) {
 const NavWrapper = styled.nav`
   width: 100%;
   background: ${darkTheme.body};
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
 `;
 
 const StyledNav = styled.div`

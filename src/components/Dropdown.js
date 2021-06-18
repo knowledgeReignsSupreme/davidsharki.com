@@ -32,6 +32,10 @@ const StyledDropdown = styled.div`
   padding: 0.5rem 0;
   background: ${darkTheme.body};
   color: ${darkTheme.fontColor};
+  z-index: 10;
+  position: sticky;
+  top: 4rem;
+  left: 0;
 
   li {
     margin-left: 0.7rem;

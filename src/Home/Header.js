@@ -53,7 +53,7 @@ const StyledHero = styled.header`
     right: 0;
     position: absolute;
     z-index: -1;
-    min-height: 18rem;
+    min-height: 16rem;
     box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
 
     @media (max-width: 600px) {
