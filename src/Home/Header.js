@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { blink, fadeInUp, typewriter } from '../Animations';
 import IDE from '../media/IDE.png';
 
 export default function Header({ currentTheme, windowHeight }) {
@@ -18,25 +19,6 @@ export default function Header({ currentTheme, windowHeight }) {
     </StyledHero>
   );
 }
-
-const typewriter = keyframes`
-    to {
-    left: 100%;
-  }
-`;
-
-const blink = keyframes`
-  to {
-    background: transparent;
-  }
-`;
-
-const fadeInUp = keyframes`
-    to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 const StyledHero = styled.header`
   position: relative;

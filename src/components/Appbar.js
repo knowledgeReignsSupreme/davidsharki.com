@@ -1,8 +1,9 @@
 import React from 'react';
 import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
 import styled from 'styled-components';
-import { darkTheme } from '../GlobalStyles';
+import { darkTheme, lightTheme } from '../GlobalStyles';
 import Switch from './Switch';
+import { motion } from 'framer-motion';
 
 export default function Appbar({
   currentTheme,
@@ -19,7 +20,7 @@ export default function Appbar({
     <NavWrapper>
       <StyledNav>
         {windowWidth >= 800 ? (
-          <NavItems sections={sections} />
+          <NavItems sections={sections} currentTheme={currentTheme} />
         ) : (
           <StyledBars>
             <FaBars onClick={toggleDropdown} />
@@ -35,11 +36,21 @@ export default function Appbar({
   );
 }
 
-function NavItems({ sections }) {
+function NavItems({ sections, currentTheme }) {
   return (
     <ul>
       {sections.map((lab) => (
-        <a
+        <motion.a
+          whileHover={{
+            scale: 1.1,
+            originX: 0,
+            color:
+              currentTheme === 'light'
+                ? lightTheme.secondary
+                : darkTheme.secondary,
+          }}
+          transition={{ type: 'tween', stiffness: 50 }}
+          key={lab.link}
           href={lab.link}
           target={lab.isAnchor ? '_self' : '_blank'}
           rel='noreferrer'
@@ -47,7 +58,7 @@ function NavItems({ sections }) {
           <li>
             {lab.icon} {lab.label}
           </li>
-        </a>
+        </motion.a>
       ))}
     </ul>
   );

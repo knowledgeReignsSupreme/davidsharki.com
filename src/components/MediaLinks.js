@@ -6,27 +6,8 @@ import {
   FaLinkedin,
   FaTimes,
 } from 'react-icons/fa';
-import styled, { css, keyframes } from 'styled-components';
-
-const slideFromLeft = keyframes`
-from {
-  transform: translateX(-100px);
-
-}
-  to {
-    transform: translateY(0);
-  }
-`;
-
-const fadeIn = keyframes`
-from {
-  opacity: 0;
-
-}
-  to {
-    opacity: 1;
-  }
-`;
+import styled, { css } from 'styled-components';
+import { fadeIn, slideFromLeft } from '../Animations';
 
 export default function MediaLinks({ show, setShowMediaLinks }) {
   const [SlideDrawer, setSlideDrawer] = useState(true);

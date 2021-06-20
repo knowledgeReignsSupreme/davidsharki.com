@@ -8,9 +8,22 @@ import wsPreview from '../media/witchershop-preview.png';
 import fsPreview from '../media/focussit-preview.png';
 import { FaLink, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { StyledLink } from '../GlobalStyles';
+import { useScrollOnView } from '../hooks/useScrollOnView';
+import { motion } from 'framer-motion';
+import { scrollReveal, slideFromRight } from '../Animations';
 
 export default function Projects() {
+  const [element, controls] = useScrollOnView();
+
   const projects = [
+    {
+      name: 'Focus Sit',
+      description: 'All-in-one solution for events and guests management',
+      icon: fsIcon,
+      preview: fsPreview,
+      link: 'https://focus-sit.com',
+      demo: 'https://www.linkedin.com/posts/david-sharki-925892204_acraclacsacgabracsacpacpadd-activity-6797845525736538112-hr92',
+    },
     {
       name: 'Witcher Shop',
       description:
@@ -29,18 +42,15 @@ export default function Projects() {
       link: 'https://tofushare.com',
       repo: 'https://github.com/knowledgeReignsSupreme/tofushare',
     },
-    {
-      name: 'Focus Sit',
-      description: 'All-in-one solution for events and guests management',
-      icon: fsIcon,
-      preview: fsPreview,
-      link: 'https://focus-sit.com',
-      demo: 'https://www.linkedin.com/posts/david-sharki-925892204_acraclacsacgabracsacpacpadd-activity-6797845525736538112-hr92',
-    },
   ];
 
   return (
-    <StyledProjects>
+    <StyledProjects
+      variants={scrollReveal}
+      initial='hidden'
+      ref={element}
+      animate={controls}
+    >
       <h3 id='projects'>Featured Projects:</h3>
       <ProjectsWrapper>
         {projects.map((project) => (
@@ -53,7 +63,7 @@ export default function Projects() {
 
 function Project({ project }) {
   return (
-    <StyledProject>
+    <StyledProject variants={slideFromRight}>
       <img src={project.preview} alt={project.name} />
       <h4>{project.name}</h4>
       <p>{project.description}</p>
@@ -82,7 +92,7 @@ function Project({ project }) {
   );
 }
 
-const StyledProjects = styled.div`
+const StyledProjects = styled(motion.div)`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -106,7 +116,7 @@ const ProjectsWrapper = styled.div`
   column-gap: 2rem;
 `;
 
-const StyledProject = styled.div`
+const StyledProject = styled(motion.div)`
   position: relative;
   display: flex;
   flex-direction: column;

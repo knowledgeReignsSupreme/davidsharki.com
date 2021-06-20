@@ -63,6 +63,7 @@ function App() {
           closeDropdown={closeDropdown}
           sections={sections}
           windowWidth={windowWidth}
+          currentTheme={theme}
         />
         <Home currentTheme={theme} windowHeight={windowHeight} />
       </main>

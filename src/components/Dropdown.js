@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
-import { darkTheme } from '../GlobalStyles';
+import { darkTheme, lightTheme } from '../GlobalStyles';
 
 export default function Dropdown({
   show,
@@ -8,6 +9,7 @@ export default function Dropdown({
   closeDropdown,
   sections,
   windowWidth,
+  currentTheme,
 }) {
   return !show
     ? null
@@ -15,7 +17,16 @@ export default function Dropdown({
         <StyledDropdown ref={dropdownRef}>
           <ul>
             {sections.map((section) => (
-              <a
+              <motion.a
+                whileHover={{
+                  scale: 1.1,
+                  originX: 0,
+                  color:
+                    currentTheme === 'light'
+                      ? lightTheme.secondary
+                      : darkTheme.secondary,
+                }}
+                transition={{ type: 'tween', stiffness: 50 }}
                 href={section.link}
                 target={section.isAnchor ? '_self' : '_blank'}
                 rel='noreferrer'
@@ -23,7 +34,7 @@ export default function Dropdown({
                 <li key={section.label} onClick={closeDropdown}>
                   {section.icon} {section.label}
                 </li>
-              </a>
+              </motion.a>
             ))}
           </ul>
         </StyledDropdown>
