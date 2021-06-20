@@ -57,13 +57,15 @@ export const scrollReveal = {
   },
 };
 
-export const slideFromRight = {
-  hidden: { x: '100vw' },
-  show: {
-    x: 0,
-    transition: {
-      duration: 0.2,
-      ease: 'easeOut',
+export const slideFromRight = (duration) => {
+  return {
+    hidden: { x: '100vw' },
+    show: {
+      x: 0,
+      transition: {
+        duration: duration || 0.5,
+        ease: 'easeOut',
+      },
     },
-  },
+  };
 };

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`

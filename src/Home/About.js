@@ -2,11 +2,22 @@ import React from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import styled from 'styled-components';
 import { StyledLink } from '../GlobalStyles';
+import { useScrollOnView } from '../hooks/useScrollOnView';
 import ME from '../media/me.png';
+import { motion } from 'framer-motion';
+import { scrollReveal, slideFromRight, slideosh } from '../Animations';
 
 export default function About() {
+  const [element, controls] = useScrollOnView();
+
   return (
-    <StyledAbout id='me'>
+    <StyledAbout
+      id='me'
+      variants={scrollReveal}
+      initial='hidden'
+      ref={element}
+      animate={controls}
+    >
       <StyledBox>
         <StyledHeader>
           <h3>About me</h3>
@@ -28,17 +39,18 @@ export default function About() {
             iusto impedit modi reprehenderit voluptatibus! Vel delectus, iste
             ipsa alias dolorem minus pariatur corporis.
           </p>
-
-          <Link href='/cv.pdf' target='_blank'>
-            <FaFilePdf /> Get my CV
-          </Link>
+          <motion.div variants={slideFromRight(2)}>
+            <Link href='/cv.pdf' target='_blank'>
+              <FaFilePdf /> Get my CV
+            </Link>
+          </motion.div>
         </StyledText>
       </StyledBox>
     </StyledAbout>
   );
 }
 
-const StyledAbout = styled.div`
+const StyledAbout = styled(motion.div)`
   width: 100%;
 `;
 

@@ -63,7 +63,7 @@ export default function Projects() {
 
 function Project({ project }) {
   return (
-    <StyledProject variants={slideFromRight}>
+    <StyledProject variants={slideFromRight(0.4)}>
       <img src={project.preview} alt={project.name} />
       <h4>{project.name}</h4>
       <p>{project.description}</p>
