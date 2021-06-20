@@ -14,6 +14,7 @@ import MediaLinks from './components/MediaLinks';
 function App() {
   const [theme, setTheme] = useState('dark');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showMediaLinks, setShowMediaLinks] = useState(true);
   const [windowWidth, windowHeight] = useWindowSize();
   const dropdownRef = useRef(null);
 
@@ -40,7 +41,10 @@ function App() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
       <main>
-        <MediaLinks />
+        <MediaLinks
+          show={showMediaLinks}
+          setShowMediaLinks={setShowMediaLinks}
+        />
         <Appbar
           currentTheme={theme}
           toggleTheme={toggleTheme}
