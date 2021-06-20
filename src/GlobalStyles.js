@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   *, *::after, *::before {
@@ -34,6 +34,20 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
   }
 
+`;
+
+export const StyledLink = styled.a`
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  background: ${(props) => props.theme.secondary};
+  background: linear-gradient(
+    to left,
+    ${(props) => props.theme.secondary},
+    ${(props) => props.theme.main}
+  );
 `;
 
 export const lightTheme = {

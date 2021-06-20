@@ -12,6 +12,7 @@ export default function index({ currentTheme, windowHeight }) {
       <Projects />
       <Seperator></Seperator>
       <About />
+      <Seperator></Seperator>
     </>
   );
 }

@@ -1,5 +1,7 @@
 import React from 'react';
+import { FaFilePdf } from 'react-icons/fa';
 import styled from 'styled-components';
+import { StyledLink } from '../GlobalStyles';
 import ME from '../media/me.png';
 
 export default function About() {
@@ -26,6 +28,10 @@ export default function About() {
             iusto impedit modi reprehenderit voluptatibus! Vel delectus, iste
             ipsa alias dolorem minus pariatur corporis.
           </p>
+
+          <Link href='/cv.pdf' target='_blank'>
+            <FaFilePdf /> Get my CV
+          </Link>
         </StyledText>
       </StyledBox>
     </StyledAbout>
@@ -85,5 +91,13 @@ const StyledText = styled.div`
   p span {
     font-size: 2.5rem;
     line-height: 1;
+  }
+`;
+
+const Link = styled(StyledLink)`
+  margin-top: 2rem;
+
+  @media (max-width: 600px) {
+    width: 60%;
   }
 `;

@@ -32,9 +32,14 @@ function App() {
   useClickOutside(dropdownRef, closeDropdown);
 
   const sections = [
-    { icon: <FaBriefcase />, label: 'Projects', anchor: '#projects' },
-    { icon: <FaMale />, label: 'About Me', anchor: '#me' },
-    { icon: <FaFilePdf />, label: 'CV', anchor: '/cv.pdf' },
+    {
+      icon: <FaBriefcase />,
+      label: 'Projects',
+      link: '#projects',
+      isAnchor: true,
+    },
+    { icon: <FaMale />, label: 'About Me', link: '#me', isAnchor: true },
+    { icon: <FaFilePdf />, label: 'CV', link: '/cv.pdf', isAnchor: false },
   ];
 
   return (

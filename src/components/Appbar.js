@@ -39,7 +39,11 @@ function NavItems({ sections }) {
   return (
     <ul>
       {sections.map((lab) => (
-        <a href={lab.anchor}>
+        <a
+          href={lab.link}
+          target={lab.isAnchor ? '_self' : '_blank'}
+          rel='noreferrer'
+        >
           <li>
             {lab.icon} {lab.label}
           </li>

@@ -7,6 +7,7 @@ import tsPreview from '../media/tofushare-preview.png';
 import wsPreview from '../media/witchershop-preview.png';
 import fsPreview from '../media/focussit-preview.png';
 import { FaLink, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { StyledLink } from '../GlobalStyles';
 
 export default function Projects() {
   const projects = [
@@ -57,11 +58,15 @@ function Project({ project }) {
       <h4>{project.name}</h4>
       <p>{project.description}</p>
       <StyledLinks>
-        <a target='_blank' rel='noreferrer' href={project.link}>
+        <Link target='_blank' rel='noreferrer' href={project.link}>
           <FaLink /> Visit Site
-        </a>
+        </Link>
 
-        <a target='_blank' rel='noreferrer' href={project.repo || project.demo}>
+        <Link
+          target='_blank'
+          rel='noreferrer'
+          href={project.repo || project.demo}
+        >
           {project.repo ? (
             <>
               <FaGithub /> Github Repo
@@ -71,7 +76,7 @@ function Project({ project }) {
               <FaLinkedin /> Project Demo
             </>
           )}
-        </a>
+        </Link>
       </StyledLinks>
     </StyledProject>
   );
@@ -141,21 +146,12 @@ const StyledLinks = styled.div`
   margin: 0 auto;
   margin-top: auto;
 
-  a {
-    display: block;
-    margin: 0 auto;
-    width: 60%;
-    text-align: center;
-    padding: 0.5rem 0.8rem;
-    background: ${(props) => props.theme.secondary};
-    background: linear-gradient(
-      to left,
-      ${(props) => props.theme.secondary},
-      ${(props) => props.theme.main}
-    );
-
-    + a {
-      margin-top: 0.5rem;
-    }
+  a + a {
+    margin-top: 0.5rem;
   }
+`;
+
+const Link = styled(StyledLink)`
+  padding: 0.5rem 0.8rem;
+  width: 60%;
 `;
