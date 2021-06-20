@@ -39,13 +39,13 @@ export const GlobalStyles = createGlobalStyle`
 export const lightTheme = {
   body: '#fff',
   fontColor: '#3a3939',
-  main: '#344FA1',
-  secondary: '#FF884B',
+  main: '#FF884B',
+  secondary: '#E5D549',
 };
 
 export const darkTheme = {
   fontColor: '#D8E3E7',
   body: '#202020',
   main: '#51C4D3',
-  secondary: '#AAAAAA',
+  secondary: '#867AE9',
 };

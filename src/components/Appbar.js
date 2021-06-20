@@ -86,6 +86,7 @@ const StyledNav = styled.div`
 
   h4 {
     width: 100%;
+    color: ${(props) => props.theme.main};
   }
 `;
 

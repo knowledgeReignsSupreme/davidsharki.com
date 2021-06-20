@@ -38,9 +38,7 @@ export default function MediaLinks({ show, setShowMediaLinks }) {
 
   return show ? (
     <StyledMediaLinks SlideDrawer={SlideDrawer}>
-      <button onClick={closeDrawer}>
-        <FaTimes />
-      </button>
+      <FaTimes onClick={closeDrawer} className='close' />
       <a
         href='https://www.linkedin.com/in/david-sharki-925892204/'
         target='_blank'
@@ -86,34 +84,31 @@ const StyledDrawer = styled.div`
 
 const StyledMediaLinks = styled(StyledDrawer)`
   a {
-    color: ${(props) => props.theme.main};
+    color: ${(props) => props.theme.secondary};
     display: block;
     padding: 0.4rem 0.6rem;
     + a {
       margin-top: 0.5rem;
     }
-    svg {
+    svg:not(first-of-type) {
       font-size: calc(1rem + 1vw);
     }
   }
 
-  button {
-    background: ${(props) => props.theme.body};
-    color: ${(props) => props.theme.main};
+  .close {
+    vertical-align: middle;
+    color: ${(props) => props.theme.secondary};
     border-radius: 15px;
     float: right;
     margin-bottom: 0.7rem;
     padding: 0.15rem 0.3rem;
     cursor: pointer;
-
-    svg {
-      vertical-align: middle;
-    }
+    height: 1.7rem;
+    width: 1.7rem;
   }
 `;
 
 const StyledToggle = styled(StyledDrawer)`
-  padding-left: 5px;
   background: transparent;
   cursor: pointer;
 

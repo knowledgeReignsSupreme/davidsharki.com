@@ -15,7 +15,7 @@ export default function Dropdown({
         <StyledDropdown ref={dropdownRef}>
           <ul>
             {sections.map((section) => (
-              <a href={section.anchor} target='_blank' rel='noreferrer'>
+              <a href={section.anchor}>
                 <li key={section.label} onClick={closeDropdown}>
                   {section.icon} {section.label}
                 </li>

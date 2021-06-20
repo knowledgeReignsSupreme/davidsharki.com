@@ -4,7 +4,7 @@ import ME from '../media/me.png';
 
 export default function About() {
   return (
-    <StyledAbout>
+    <StyledAbout id='me'>
       <StyledBox>
         <StyledHeader>
           <h3>About me</h3>

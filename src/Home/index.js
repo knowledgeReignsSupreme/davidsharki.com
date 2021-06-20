@@ -17,5 +17,5 @@ export default function index({ currentTheme, windowHeight }) {
 }
 
 const Seperator = styled.div`
-  margin: 2rem 0;
+  margin: 4rem 0;
 `;
