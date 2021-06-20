@@ -50,10 +50,11 @@ export const StyledLink = styled.a`
   padding: 0.5rem 0.5rem;
   background: ${(props) => props.theme.secondary};
   background: linear-gradient(
-    to left,
-    ${(props) => props.theme.secondary},
+    to right bottom,
+    ${(props) => props.theme.secondary} 45%,
     ${(props) => props.theme.main}
   );
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.3);
 `;
 
 export const lightTheme = {

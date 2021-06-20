@@ -56,7 +56,7 @@ const StyledAbout = styled(motion.div)`
 
 const StyledBox = styled.div`
   max-width: 90%;
-  border: 1px solid ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.main};
   margin: 0 auto;
   padding: 1rem;
   border-radius: 25px;
