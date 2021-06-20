@@ -110,8 +110,11 @@ const StyledProject = styled.div`
   box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
   margin-top: 1rem;
   padding-bottom: 2rem;
+  border-radius: 25px;
 
   img {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
     height: 13rem;
     width: 100%;
     opacity: 0.35;

@@ -31,15 +31,15 @@ function App() {
   useClickOutside(dropdownRef, closeDropdown);
 
   const sections = [
-    { icon: <FaBriefcase />, label: 'Portfolio', anchor: '#projects' },
     { icon: <FaMale />, label: 'About Me', anchor: '#me' },
+    { icon: <FaBriefcase />, label: 'Projects', anchor: '#projects' },
     { icon: <FaFilePdf />, label: 'CV', anchor: '/cv.pdf' },
   ];
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <div>
+      <main>
         <MediaLinks />
         <Appbar
           currentTheme={theme}
@@ -56,7 +56,7 @@ function App() {
           windowWidth={windowWidth}
         />
         <Home currentTheme={theme} windowHeight={windowHeight} />
-      </div>
+      </main>
     </ThemeProvider>
   );
 }
