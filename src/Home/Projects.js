@@ -147,7 +147,12 @@ const StyledLinks = styled.div`
     width: 60%;
     text-align: center;
     padding: 0.5rem 0.8rem;
-    background-color: ${(props) => props.theme.main};
+    background: ${(props) => props.theme.secondary};
+    background: linear-gradient(
+      to left,
+      ${(props) => props.theme.secondary},
+      ${(props) => props.theme.main}
+    );
 
     + a {
       margin-top: 0.5rem;
