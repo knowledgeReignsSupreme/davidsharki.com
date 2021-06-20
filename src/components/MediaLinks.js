@@ -64,6 +64,7 @@ const StyledDrawer = styled.div`
 `;
 
 const StyledMediaLinks = styled(StyledDrawer)`
+  opacity: 0.7;
   a {
     color: ${(props) => props.theme.secondary};
     display: block;

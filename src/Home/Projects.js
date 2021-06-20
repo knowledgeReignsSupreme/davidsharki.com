@@ -98,6 +98,7 @@ const StyledProjects = styled(motion.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-x: hidden;
 
   h3 {
     font-size: clamp(1rem, 1.5vw + 1rem, 2.8rem);

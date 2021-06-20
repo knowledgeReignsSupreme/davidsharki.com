@@ -35,6 +35,11 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
   }
 
+
+main {
+  overflow-x: hidden !important;
+
+}
 `;
 
 export const StyledLink = styled.a`

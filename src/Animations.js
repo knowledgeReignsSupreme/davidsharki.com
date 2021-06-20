@@ -1,4 +1,5 @@
 import { keyframes } from 'styled-components';
+import { darkTheme, lightTheme } from './GlobalStyles';
 
 export const slideFromLeft = keyframes`
 from {
@@ -52,20 +53,31 @@ export const scrollReveal = {
   },
   exit: {
     transition: {
-      duration: 1,
+      duration: 2,
+      ease: 'easeIn',
     },
   },
 };
 
 export const slideFromRight = (duration) => {
   return {
-    hidden: { x: '100vw' },
+    hidden: { x: '100%', opacity: 0 },
     show: {
       x: 0,
+      opacity: 1,
       transition: {
         duration: duration || 0.5,
         ease: 'easeOut',
       },
     },
+  };
+};
+
+export const hoverLink = (currentTheme) => {
+  return {
+    scale: 1.1,
+    originX: 0,
+    color:
+      currentTheme === 'light' ? lightTheme.secondary : darkTheme.secondary,
   };
 };
