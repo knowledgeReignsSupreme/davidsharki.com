@@ -63,7 +63,7 @@ export default function Projects() {
 
 function Project({ project }) {
   return (
-    <StyledProject variants={slideFromRight(0.4)}>
+    <StyledProject variants={slideFromRight(0.1)}>
       <img src={project.preview} alt={project.name} />
       <h4>{project.name}</h4>
       <p>{project.description}</p>
@@ -98,7 +98,7 @@ const StyledProjects = styled(motion.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  overflow-x: hidden;
+  padding-bottom: 1rem;
 
   h3 {
     font-size: clamp(1rem, 1.5vw + 1rem, 2.8rem);

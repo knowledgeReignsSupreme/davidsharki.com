@@ -26,10 +26,10 @@ export default function About() {
         <StyledText>
           <img src={ME} alt='me' />
           <p>
-            <span>L</span>orem ipsum dolor sit, amet consectetur adipisicing
-            elit. Eius, accusantium. Eaque soluta cupiditate ullam amet
-            similique error modi quis? Unde ex culpa ea corporis facilis soluta
-            ad alias id tempore non! Doloribus natus ipsam vel quam
+            <span>E</span>ver since the first day at school, amet consectetur
+            adipisicing elit. Eius, accusantium. Eaque soluta cupiditate ullam
+            amet similique error modi quis? Unde ex culpa ea corporis facilis
+            soluta ad alias id tempore non! Doloribus natus ipsam vel quam
             reprehenderit ducimus hic, consequatur, dolorem adipisci inventore
             assumenda vitae quaerat, beatae non quod aliquam illum nemo
             voluptatem praesentium quisquam nulla accusamus modi odio? Deleniti
