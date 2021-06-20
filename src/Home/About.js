@@ -55,6 +55,10 @@ const StyledHeader = styled.div`
   h3 {
     font-size: clamp(1rem, 1.5vw + 1rem, 2.8rem);
   }
+
+  p {
+    white-space: nowrap;
+  }
 `;
 
 const StyledText = styled.div`

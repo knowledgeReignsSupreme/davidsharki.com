@@ -46,7 +46,7 @@ const StyledHero = styled.header`
   &::after {
     content: '';
     background: url(${IDE}) no-repeat center center/cover;
-    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.5 : 0.12)};
+    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.3 : 0.12)};
     top: 0;
     left: 0;
     bottom: 0;
