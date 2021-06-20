@@ -17,7 +17,7 @@ from {
 
 }
   to {  
-    opacity: 1;
+    opacity: .7;
   }
 `;
 

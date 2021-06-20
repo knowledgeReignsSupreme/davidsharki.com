@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { darkTheme, lightTheme } from '../GlobalStyles';
 import Switch from './Switch';
 import { motion } from 'framer-motion';
+import logoDark from '../media/programmer_dark.svg';
+import logoLight from '../media/programmer_light.svg';
 
 export default function Appbar({
   currentTheme,
@@ -26,7 +28,7 @@ export default function Appbar({
             <FaBars onClick={toggleDropdown} />
           </StyledBars>
         )}
-        <h4>David Sharki.</h4>
+        <img src={currentTheme === 'light' ? logoLight : logoDark} alt='' />
         <StyledSwitch>
           {determineIcon()}
           <Switch onToggle={toggleTheme} />
@@ -64,13 +66,26 @@ function NavItems({ sections, currentTheme }) {
   );
 }
 
+export const fadeIn = keyframes`
+from {
+  opacity: 0;
+
+}
+  to {  
+    opacity: .7;
+  }
+`;
+
 const NavWrapper = styled.nav`
   width: 100%;
   background: ${darkTheme.body};
-  position: sticky;
+  z-index: 5;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 5;
+  right: 0;
+  bottom: 0;
+  height: 4rem;
 `;
 
 const StyledNav = styled.div`
@@ -98,10 +113,16 @@ const StyledNav = styled.div`
       }
     }
   }
-
-  h4 {
+  img {
     width: 100%;
-    color: ${(props) => props.theme.main};
+    height: 3rem;
+    animation: ${fadeIn} 2s;
+    opacity: 1;
+
+    &:hover {
+      transform: rotate(180deg);
+      transition: 2s ease-out;
+    }
   }
 `;
 
@@ -117,7 +138,9 @@ const StyledBars = styled.div`
 const StyledSwitch = styled.div`
   display: flex;
   align-items: center;
-  align-content: center;
+  justify-content: flex-end;
+  width: 100%;
+
   svg {
     font-size: 1.2rem;
     color: ${(props) => props.theme.secondary};
