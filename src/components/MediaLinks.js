@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga';
 import styled, { css } from 'styled-components';
 import { fadeIn, slideFromLeft } from '../Animations';
 import {
@@ -9,6 +10,7 @@ import {
   FaLinkedin,
   FaTimes,
 } from 'react-icons/fa';
+import { reportEvent } from '../Analytics';
 
 export default function MediaLinks({ show, setShowMediaLinks }) {
   const [SlideDrawer, setSlideDrawer] = useState(true);
@@ -25,6 +27,9 @@ export default function MediaLinks({ show, setShowMediaLinks }) {
         href='https://www.linkedin.com/in/david-sharki-925892204/'
         target='_blank'
         rel='noreferrer'
+        onClick={() =>
+          reportEvent('Media links', 'User clicked the Linkedin button')
+        }
       >
         <FaLinkedin />
       </a>
@@ -32,6 +37,9 @@ export default function MediaLinks({ show, setShowMediaLinks }) {
         href='https://github.com/knowledgeReignsSupreme'
         target='_blank'
         rel='noreferrer'
+        onClick={() =>
+          reportEvent('Media links', 'User clicked the Github button')
+        }
       >
         <FaGithub />
       </a>

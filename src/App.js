@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useWindowSize } from './hooks/useWIndowSize';
 import useClickOutside from './hooks/useClickOutside';
 
@@ -10,8 +10,11 @@ import Appbar from './components/Appbar';
 import Dropdown from './components/Dropdown';
 import MediaLinks from './components/MediaLinks';
 import { FaBriefcase, FaFilePdf, FaMale } from 'react-icons/fa';
+import { gaInit, reportEvent } from './Analytics';
 
 function App() {
+  gaInit();
+
   const [theme, setTheme] = useState('dark');
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMediaLinks, setShowMediaLinks] = useState(true);
@@ -42,6 +45,10 @@ function App() {
     { icon: <FaMale />, label: 'About Me', link: '#me', isAnchor: true },
     { icon: <FaFilePdf />, label: 'CV', link: '/cv.pdf', isAnchor: false },
   ];
+
+  useEffect(() => {
+    reportEvent('Traffic', 'User entered the site');
+  }, []);
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

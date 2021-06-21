@@ -12,6 +12,7 @@ import tsPreview from '../media/tofushare-preview.png';
 import wsPreview from '../media/witchershop-preview.png';
 import fsPreview from '../media/focussit-preview.png';
 import { FaLink, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { reportEvent } from '../Analytics';
 
 export default function Projects() {
   const [element, controls] = useScrollOnView();
@@ -70,7 +71,17 @@ function Project({ project }) {
       <h4>{project.name}</h4>
       <p>{project.description}</p>
       <StyledLinks>
-        <Link target='_blank' rel='noreferrer' href={project.link}>
+        <Link
+          target='_blank'
+          rel='noreferrer'
+          href={project.link}
+          onClick={() =>
+            reportEvent(
+              'Projects',
+              `User has clicked the ${project.name} visit-site button`
+            )
+          }
+        >
           <FaLink /> Visit Site
         </Link>
 
@@ -78,6 +89,12 @@ function Project({ project }) {
           target='_blank'
           rel='noreferrer'
           href={project.repo || project.demo}
+          onClick={() =>
+            reportEvent(
+              'Projects',
+              `User has clicked the ${project.name} Github repo button`
+            )
+          }
         >
           {project.repo ? (
             <>
