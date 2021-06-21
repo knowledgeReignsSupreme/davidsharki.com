@@ -27,18 +27,16 @@ export default function About() {
         <StyledText>
           <img src={ME} alt='me' />
           <p>
-            <span>E</span>ver since the first day at school, amet consectetur
-            adipisicing elit. Eius, accusantium. Eaque soluta cupiditate ullam
-            amet similique error modi quis? Unde ex culpa ea corporis facilis
-            soluta ad alias id tempore non! Doloribus natus ipsam vel quam
-            reprehenderit ducimus hic, consequatur, dolorem adipisci inventore
-            assumenda vitae quaerat, beatae non quod aliquam illum nemo
-            voluptatem praesentium quisquam nulla accusamus modi odio? Deleniti
-            praesentium alias maiores totam accusamus numquam, sapiente nam non
-            eaque nemo officiis commodi blanditiis excepturi provident quidem
-            rem, id ex, laudantium error. Expedita recusandae fugit distinctio
-            iusto impedit modi reprehenderit voluptatibus! Vel delectus, iste
-            ipsa alias dolorem minus pariatur corporis.
+            <span>A</span>s a web developer, the thing I enjoy the most is
+            solving problems. whether it's a real-life problem that requires a
+            technological solution or a coding problem that requires creativity.
+            <br /> I'm self-taught and always striving to get better and I enjoy
+            learning new technologies & concepts. I focus mainly on React, Node,
+            TypeScript, MongoDB & PostgreSQL, but still exploring other
+            technologies and frameworks that catch my interest!. <br />
+            In my free time you'll catch me playing the guitar, reading books,
+            playing video games, and working out at the gym. (considered to be
+            one of the best gym buddies to ever live)
           </p>
           <motion.div variants={slideFromRight(2)}>
             <Link href='/cv.pdf' target='_blank'>
@@ -53,6 +51,7 @@ export default function About() {
 
 const StyledAbout = styled(motion.div)`
   width: 100%;
+  padding-bottom: 4rem;
 `;
 
 const StyledBox = styled.div`
@@ -105,6 +104,10 @@ const StyledText = styled.div`
   p span {
     font-size: 2.5rem;
     line-height: 1;
+  }
+
+  p {
+    line-height: 1.7;
   }
 `;
 
