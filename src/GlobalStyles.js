@@ -13,6 +13,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'roboto', sans-serif;
   }
 
+  ::selection {
+      background: ${(props) => props.theme.secondary};
+    }
+
   h1 {
     font-family: "Source Code Pro", monospace;
   }

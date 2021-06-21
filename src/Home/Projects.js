@@ -149,6 +149,7 @@ const StyledProject = styled(motion.div)`
 
   img {
     position: relative;
+    object-fit: cover;
     width: 100%;
     height: 13rem;
     opacity: 0.35;
