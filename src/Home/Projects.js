@@ -19,7 +19,8 @@ export default function Projects() {
   const projects = [
     {
       name: 'Focus Sit',
-      description: 'All-in-one solution for events and guests management',
+      description:
+        'All-in-one solution for events and guests management sold to Focus-Event. Made with ReactTS, Nestjs & PostgreSQL.',
       icon: fsIcon,
       preview: fsPreview,
       link: 'https://focus-sit.com',
@@ -28,7 +29,7 @@ export default function Projects() {
     {
       name: 'Witcher Shop',
       description:
-        'An E-commerce with intergrated PayPal and Stripe payment options',
+        'An E-commerce with integrated PayPal and Stripe payment methods. Made using the MERN stack',
       icon: wsIcon,
       preview: wsPreview,
       link: 'https://witcher-shop.herokuapp.com/',
@@ -37,7 +38,7 @@ export default function Projects() {
     {
       name: 'Tofu Share',
       description:
-        'Vegan food sharing online community with social-app features',
+        'Vegan food sharing online community with social-app features.  Made using the MERN stack & AWS',
       icon: tsIcon,
       preview: tsPreview,
       link: 'https://tofushare.com',
@@ -150,6 +151,7 @@ const StyledProject = styled(motion.div)`
 
   p {
     padding: 0.5rem;
+    line-height: 1.2;
   }
 `;
 
