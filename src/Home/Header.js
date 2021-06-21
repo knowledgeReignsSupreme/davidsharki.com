@@ -13,7 +13,7 @@ export default function Header({ currentTheme, windowHeight }) {
         <h1>
           <span>&lt;h1&gt;</span>Hello World!<span>&lt;/h1&gt;</span>
         </h1>
-        <StyledName>I'm David.</StyledName>
+        <StyledName>Hi, I'm David</StyledName>
         <StyledSubtitle>A full-stack web developer</StyledSubtitle>
       </StyledContent>
     </StyledHero>

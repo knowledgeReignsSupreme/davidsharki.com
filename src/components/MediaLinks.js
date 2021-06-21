@@ -5,6 +5,7 @@ import {
   FaArrowRight,
   FaAt,
   FaFilePdf,
+  FaGithub,
   FaLinkedin,
   FaTimes,
 } from 'react-icons/fa';
@@ -26,6 +27,13 @@ export default function MediaLinks({ show, setShowMediaLinks }) {
         rel='noreferrer'
       >
         <FaLinkedin />
+      </a>
+      <a
+        href='https://github.com/knowledgeReignsSupreme'
+        target='_blank'
+        rel='noreferrer'
+      >
+        <FaGithub />
       </a>
       <a href='/cv.pdf' target='_blank' rel='noreferrer'>
         <FaFilePdf />
