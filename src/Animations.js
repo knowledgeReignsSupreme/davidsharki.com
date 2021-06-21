@@ -53,7 +53,7 @@ export const scrollReveal = {
   },
   exit: {
     transition: {
-      duration: 2,
+      duration: 0.5,
       ease: 'easeIn',
     },
   },

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactGA from 'react-ga';
 import styled, { css } from 'styled-components';
 import { fadeIn, slideFromLeft } from '../Animations';
 import {
