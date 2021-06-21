@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
 import styled, { keyframes } from 'styled-components';
 import { darkTheme, lightTheme } from '../GlobalStyles';
-import Switch from './Switch';
 import { motion } from 'framer-motion';
+import Switch from './Switch';
 import logoDark from '../media/programmer_dark.svg';
 import logoLight from '../media/programmer_light.svg';
+import { FaBars, FaMoon, FaSun } from 'react-icons/fa';
+import { fadeIn } from '../Animations';
 
 export default function Appbar({
   currentTheme,
@@ -28,7 +29,10 @@ export default function Appbar({
             <FaBars onClick={toggleDropdown} />
           </StyledBars>
         )}
-        <img src={currentTheme === 'light' ? logoLight : logoDark} alt='' />
+        <img
+          src={currentTheme === 'light' ? logoLight : logoDark}
+          alt='dark/light theme icon'
+        />
         <StyledSwitch>
           {determineIcon()}
           <Switch onToggle={toggleTheme} />
@@ -66,35 +70,25 @@ function NavItems({ sections, currentTheme }) {
   );
 }
 
-export const fadeIn = keyframes`
-from {
-  opacity: 0;
-
-}
-  to {  
-    opacity: .7;
-  }
-`;
-
 const NavWrapper = styled.nav`
   width: 100%;
-  background: ${darkTheme.body};
-  z-index: 5;
   position: fixed;
+  height: 4rem;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 4rem;
+  z-index: 5;
+  background: ${darkTheme.body};
 `;
 
 const StyledNav = styled.div`
   max-width: 98%;
-  margin: 0 auto;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  margin: 0 auto;
   color: ${darkTheme.fontColor};
 
   ul {
@@ -113,11 +107,12 @@ const StyledNav = styled.div`
       }
     }
   }
+
   img {
     width: 100%;
     height: 3rem;
-    animation: ${fadeIn} 2s;
     opacity: 1;
+    animation: ${fadeIn} 2s;
 
     &:hover {
       transform: rotate(180deg);
@@ -128,6 +123,7 @@ const StyledNav = styled.div`
 
 const StyledBars = styled.div`
   width: 100%;
+
   svg {
     height: 1.5rem;
     width: 2rem;

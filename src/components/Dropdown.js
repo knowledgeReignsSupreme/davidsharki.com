@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { darkTheme, lightTheme } from '../GlobalStyles';
 
 export default function Dropdown({
@@ -43,16 +43,17 @@ export default function Dropdown({
 
 const StyledDropdown = styled.div`
   width: 100%;
-  margin: 0 auto;
+  position: sticky;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   padding: 0.5rem 0;
-  background: ${darkTheme.body};
-  color: ${darkTheme.fontColor};
-  z-index: 10;
-  position: sticky;
   top: 4rem;
   left: 0;
+  z-index: 10;
+
+  color: ${darkTheme.fontColor};
+  background: ${darkTheme.body};
 
   a {
     cursor: pointer;

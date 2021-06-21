@@ -8,13 +8,14 @@ import { lightTheme, darkTheme, GlobalStyles } from './GlobalStyles';
 import Home from './Home';
 import Appbar from './components/Appbar';
 import Dropdown from './components/Dropdown';
-import { FaBriefcase, FaFilePdf, FaMale } from 'react-icons/fa';
 import MediaLinks from './components/MediaLinks';
+import { FaBriefcase, FaFilePdf, FaMale } from 'react-icons/fa';
 
 function App() {
   const [theme, setTheme] = useState('dark');
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMediaLinks, setShowMediaLinks] = useState(true);
+
   const [windowWidth, windowHeight] = useWindowSize();
   const dropdownRef = useRef(null);
 

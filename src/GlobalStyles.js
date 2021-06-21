@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -48,13 +47,12 @@ export const StyledLink = styled.a`
   width: 30%;
   text-align: center;
   padding: 0.5rem 0.5rem;
-  background: ${(props) => props.theme.secondary};
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.3);
   background: linear-gradient(
     to right bottom,
     ${(props) => props.theme.secondary} 45%,
     ${(props) => props.theme.main}
   );
-  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.3);
 `;
 
 export const lightTheme = {

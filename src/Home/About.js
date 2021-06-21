@@ -1,11 +1,12 @@
 import React from 'react';
-import { FaFilePdf } from 'react-icons/fa';
+import { useScrollOnView } from '../hooks/useScrollOnView';
 import styled from 'styled-components';
 import { StyledLink } from '../GlobalStyles';
-import { useScrollOnView } from '../hooks/useScrollOnView';
-import ME from '../media/me.png';
 import { motion } from 'framer-motion';
-import { scrollReveal, slideFromRight, slideosh } from '../Animations';
+import { scrollReveal, slideFromRight } from '../Animations';
+
+import ME from '../media/me.png';
+import { FaFilePdf } from 'react-icons/fa';
 
 export default function About() {
   const [element, controls] = useScrollOnView();
@@ -14,9 +15,9 @@ export default function About() {
     <StyledAbout
       id='me'
       variants={scrollReveal}
-      initial='hidden'
       ref={element}
       animate={controls}
+      initial='hidden'
     >
       <StyledBox>
         <StyledHeader>
@@ -56,10 +57,11 @@ const StyledAbout = styled(motion.div)`
 
 const StyledBox = styled.div`
   max-width: 90%;
-  border: 1px solid ${(props) => props.theme.main};
   margin: 0 auto;
   padding: 1rem;
+  border: 1px solid ${(props) => props.theme.main};
   border-radius: 25px;
+
   @media (max-width: 500px) {
     max-width: 95%;
   }
@@ -88,9 +90,9 @@ const StyledText = styled.div`
   img {
     width: 6rem;
     height: 6rem;
-    border-radius: 50%;
-    object-fit: cover;
     float: left;
+    object-fit: cover;
+    border-radius: 50%;
     shape-outside: circle(50%);
     margin-right: 0.3rem;
 

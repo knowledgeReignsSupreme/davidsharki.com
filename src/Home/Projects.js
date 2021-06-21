@@ -1,5 +1,10 @@
 import React from 'react';
+import { useScrollOnView } from '../hooks/useScrollOnView';
 import styled from 'styled-components';
+import { StyledLink } from '../GlobalStyles';
+import { motion } from 'framer-motion';
+import { scrollReveal, slideFromRight } from '../Animations';
+
 import tsIcon from '../media/tofushare-icon.png';
 import wsIcon from '../media/witchershop-icon.jpg';
 import fsIcon from '../media/focussit-icon.png';
@@ -7,10 +12,6 @@ import tsPreview from '../media/tofushare-preview.png';
 import wsPreview from '../media/witchershop-preview.png';
 import fsPreview from '../media/focussit-preview.png';
 import { FaLink, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { StyledLink } from '../GlobalStyles';
-import { useScrollOnView } from '../hooks/useScrollOnView';
-import { motion } from 'framer-motion';
-import { scrollReveal, slideFromRight } from '../Animations';
 
 export default function Projects() {
   const [element, controls] = useScrollOnView();
@@ -47,9 +48,9 @@ export default function Projects() {
   return (
     <StyledProjects
       variants={scrollReveal}
-      initial='hidden'
       ref={element}
       animate={controls}
+      initial='hidden'
     >
       <h3 id='projects'>Featured Projects:</h3>
       <ProjectsWrapper>
@@ -118,30 +119,30 @@ const ProjectsWrapper = styled.div`
 `;
 
 const StyledProject = styled(motion.div)`
+  width: 30rem;
+  max-width: 95%;
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 30rem;
-  max-width: 95%;
   box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
   margin-top: 1rem;
   padding-bottom: 2rem;
   border-radius: 25px;
 
   img {
+    position: relative;
+    width: 100%;
+    height: 13rem;
+    opacity: 0.35;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    height: 13rem;
-    width: 100%;
-    opacity: 0.35;
-    position: relative;
   }
 
   h4 {
     position: absolute;
     bottom: 50%;
-    z-index: 3;
     left: 20px;
+    z-index: 3;
     font-size: 1.5rem;
     padding: 0.5rem;
     border-bottom: 1px solid ${(props) => props.theme.main};

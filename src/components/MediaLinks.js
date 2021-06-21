@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
+import { fadeIn, slideFromLeft } from '../Animations';
 import {
   FaArrowRight,
   FaAt,
@@ -6,8 +8,6 @@ import {
   FaLinkedin,
   FaTimes,
 } from 'react-icons/fa';
-import styled, { css } from 'styled-components';
-import { fadeIn, slideFromLeft } from '../Animations';
 
 export default function MediaLinks({ show, setShowMediaLinks }) {
   const [SlideDrawer, setSlideDrawer] = useState(true);
@@ -65,10 +65,12 @@ const StyledDrawer = styled.div`
 
 const StyledMediaLinks = styled(StyledDrawer)`
   opacity: 0.7;
+
   a {
-    color: ${(props) => props.theme.secondary};
     display: block;
     padding: 0.4rem 0.6rem;
+    color: ${(props) => props.theme.secondary};
+
     + a {
       margin-top: 0.5rem;
     }
@@ -78,15 +80,15 @@ const StyledMediaLinks = styled(StyledDrawer)`
   }
 
   .close {
-    vertical-align: middle;
-    color: ${(props) => props.theme.secondary};
-    border-radius: 15px;
     float: right;
+    width: 1.7rem;
+    height: 1.7rem;
     margin-bottom: 0.7rem;
     padding: 0.15rem 0.3rem;
+    color: ${(props) => props.theme.secondary};
+    border-radius: 15px;
+    vertical-align: middle;
     cursor: pointer;
-    height: 1.7rem;
-    width: 1.7rem;
   }
 `;
 

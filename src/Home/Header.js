@@ -22,21 +22,22 @@ export default function Header({ currentTheme, windowHeight }) {
 
 const StyledHero = styled.header`
   position: relative;
-  min-height: 100vh;
   width: 100%;
+  min-height: 100vh;
 
   &::after {
     content: '';
-    background: url(${IDE}) no-repeat center center/cover;
-    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.3 : 0.12)};
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    position: absolute;
-    z-index: -1;
     min-height: 16rem;
+    z-index: -1;
     box-shadow: 0 7px 2px rgba(0, 0, 0, 0.3);
+
+    background: url(${IDE}) no-repeat center center/cover;
+    opacity: ${(props) => (props.currentTheme === 'dark' ? 0.3 : 0.12)};
 
     @media (max-width: 600px) {
       background-position: left;
