@@ -52,7 +52,7 @@ const StyledContent = styled.div`
   flex-direction: column;
 
   h1 {
-    font-size: clamp(1rem + 3vw, 1rem + 50%, 4rem);
+    font-size: clamp(1.8rem, 5vw, 4rem);
 
     position: relative;
     width: max-content;
@@ -82,12 +82,13 @@ const StyledContent = styled.div`
     }
 
     span {
-      font-size: clamp(0.9rem, 1vw + 1rem, 4rem);
+      font-size: clamp(1.2rem, 3.5vw, 3rem);
     }
   }
 
   p {
-    font-size: clamp(1rem + 1vw, 1rem + 20%, 3.2rem);
+    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+
     margin-top: 0.3rem;
     opacity: 0;
     transform: translateY(3rem);
