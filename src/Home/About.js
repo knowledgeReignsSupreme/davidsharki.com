@@ -72,7 +72,7 @@ const StyledHeader = styled.div`
   text-align: center;
 
   h3 {
-    font-size: clamp(1rem, 1.5vw + 1rem, 2.8rem);
+    font-size: clamp(1rem + 1.5vw, 100%, 2.3rem);
   }
 
   p {
