@@ -13,8 +13,6 @@ import { FaBriefcase, FaFilePdf, FaMale } from 'react-icons/fa';
 import { gaInit, reportEvent } from './Analytics';
 
 function App() {
-  gaInit();
-
   const [theme, setTheme] = useState('dark');
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMediaLinks, setShowMediaLinks] = useState(true);
@@ -47,6 +45,7 @@ function App() {
   ];
 
   useEffect(() => {
+    gaInit();
     reportEvent('Traffic', 'User entered the site');
   }, []);
 
