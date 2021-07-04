@@ -30,9 +30,9 @@ export default function About() {
             <span>A</span>s a web developer, the thing I enjoy the most is
             solving problems. whether it's a real-life problem that requires a
             technological solution or a coding problem that requires creativity.
-            <br /> I'm self-taught and always striving to get better and I enjoy
-            learning new technologies & concepts. I focus mainly on React, Node,
-            TypeScript, MongoDB & PostgreSQL, but still exploring other
+            <br /> I'm self-taught and always striving to get better. I also enjoy
+            learning new technologies & concepts. While mainly focused on React, Node,
+            TypeScript, MongoDB & PostgreSQL, I am still exploring other
             technologies and frameworks that catch my interest!. <br />
             In my free time you'll catch me playing the guitar, reading books,
             playing video games, and working out at the gym. (considered to be
