@@ -46,7 +46,7 @@ export const scrollReveal = {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.5,
+      staggerChildren: 0.25,
       duration: 1,
       ease: 'easeOut',
     },
