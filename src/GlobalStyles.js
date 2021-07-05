@@ -57,6 +57,14 @@ export const StyledLink = styled.a`
     ${(props) => props.theme.secondary} 45%,
     ${(props) => props.theme.main}
   );
+
+  &:hover {
+    background: linear-gradient(
+      to left top,
+      ${(props) => props.theme.secondary} 45%,
+      ${(props) => props.theme.main}
+    );
+  }
 `;
 
 export const lightTheme = {
