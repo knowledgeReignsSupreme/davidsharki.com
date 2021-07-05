@@ -41,7 +41,7 @@ export const fadeInUp = keyframes`
 `;
 
 export const scrollReveal = {
-  hidden: { opacity: [0, 0.5], scale: [1.1, 1.05] },
+  hidden: { opacity: 0, scale: 1.1 },
   show: {
     opacity: 1,
     scale: 1,
