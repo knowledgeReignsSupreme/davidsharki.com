@@ -46,7 +46,7 @@ export const scrollReveal = {
     opacity: 1,
     scale: 1,
     transition: {
-      staggerChildren: 0.75,
+      staggerChildren: 0.5,
       duration: 1,
       ease: 'easeOut',
     },
@@ -67,7 +67,7 @@ export const slideFromRight = (duration) => {
       opacity: 1,
       transition: {
         duration: duration || 0.5,
-        ease: 'easeOut',
+        ease: [0, 0.87, 0.86, 0.57],
       },
     },
   };

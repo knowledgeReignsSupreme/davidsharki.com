@@ -70,7 +70,7 @@ export default function Grid() {
 
       <StyledWrapper>
         {projects.map((project) => (
-          <StyledProject variants={slideFromRight(0.1)}>
+          <StyledProject variants={slideFromRight(0.7)}>
             <img src={project.preview} alt={project.name} />
             <h4>{project.name}</h4>
             <p>{project.description}</p>
@@ -123,7 +123,7 @@ const StyledWrapper = styled.div`
   padding: 1vmin;
 `;
 
-const StyledProject = styled.div`
+const StyledProject = styled(motion.div)`
   display: flex;
   flex-direction: column;
   flex: 1 1;
