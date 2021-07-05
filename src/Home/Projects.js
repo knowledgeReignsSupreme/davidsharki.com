@@ -140,6 +140,7 @@ const StyledProject = styled(motion.div)`
     object-fit: cover;
     width: 100%;
     height: 50%;
+    min-height: 8rem;
     opacity: ${(props) => (props.theme === lightTheme ? 0.2 : 0.35)};
   }
 
@@ -150,8 +151,14 @@ const StyledProject = styled(motion.div)`
     z-index: 3;
     font-size: 1.5rem;
     padding: 0.5rem;
+    padding-bottom: 0.2rem;
     border-bottom: 1px solid ${(props) => props.theme.main};
     transform: skewX(10deg);
+
+    @media (max-width: 500px) {
+      bottom: 68%;
+      left: 5px;
+    }
   }
 
   p {
