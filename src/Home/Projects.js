@@ -155,6 +155,7 @@ const StyledProject = styled(motion.div)`
   }
 
   p {
+    margin-top: 0.5rem;
     padding: 0.5rem;
     line-height: 1.5;
   }
