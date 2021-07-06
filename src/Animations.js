@@ -67,7 +67,7 @@ export const slideFromRight = (duration) => {
       opacity: 1,
       transition: {
         duration: duration || 0.5,
-        ease: [0, 0.87, 0.86, 0.57],
+        ease: [0.17, 0.67, 0.83, 0.67],
       },
     },
   };
