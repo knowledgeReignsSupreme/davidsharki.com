@@ -78,13 +78,10 @@ const StyledBox = styled.div`
 
   display: flex;
   justify-content: center;
-  @media (max-width: 500px) {
-    max-width: 95%;
-  }
 `;
 
 const StyledImage = styled.div`
-  margin-right: 3rem;
+  margin-right: 2rem;
 
   img {
     object-fit: cover;
@@ -96,9 +93,8 @@ const StyledImage = styled.div`
 
 const StyledText = styled.div`
   max-width: 90ch;
-  margin-top: 0rem;
   line-height: 1.5;
-  padding: 1vmin;
+  padding: 2vmin;
 
   img {
     width: 6rem;
@@ -109,7 +105,7 @@ const StyledText = styled.div`
     shape-outside: circle(50%);
     margin-right: 0.3rem;
 
-    @media (max-width: 500px) {
+    @media (max-width: 400px) {
       width: 4rem;
       height: 4rem;
     }
