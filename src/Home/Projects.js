@@ -147,7 +147,7 @@ const StyledProject = styled(motion.div)`
   h4 {
     position: absolute;
     bottom: 60%;
-    left: 20px;
+    left: 10px;
     z-index: 3;
     font-size: 1.5rem;
     padding: 0.5rem;
@@ -164,6 +164,7 @@ const StyledProject = styled(motion.div)`
   p {
     margin-top: 0.5rem;
     padding: 0.5rem;
+    margin-left: 10px;
     line-height: 1.5;
   }
 
