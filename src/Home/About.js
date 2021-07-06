@@ -8,7 +8,7 @@ import { scrollReveal, slideFromRight } from '../Animations';
 import ME from '../media/me.png';
 import { FaFilePdf } from 'react-icons/fa';
 
-export default function About() {
+export default function About({ windowWidth }) {
   const [element, controls] = useScrollOnView();
 
   return (
@@ -20,12 +20,16 @@ export default function About() {
       initial='hidden'
     >
       <StyledBox>
-        <StyledHeader>
-          <h3>About me</h3>
-          <p>David Sharki</p>
-        </StyledHeader>
+        {windowWidth > 800 && (
+          <StyledImage>
+            <img src={ME} alt='me' />
+          </StyledImage>
+        )}
         <StyledText>
-          <img src={ME} alt='me' />
+          <StyledHeader>
+            <h3>About me</h3>
+          </StyledHeader>
+          {windowWidth <= 800 && <img src={ME} alt='me' />}
           <p>
             <span>A</span>s a web developer, the thing I enjoy the most is
             solving problems. whether it's a real-life problem that requires a
@@ -34,9 +38,9 @@ export default function About() {
             enjoy learning new technologies & concepts. While mainly focused on
             React, Node, TypeScript, MongoDB & PostgreSQL, I am still exploring
             other technologies and frameworks that catch my interest!. <br />
-            In my free time you'll catch me playing the guitar, reading books,
-            playing video games, and working out at the gym. (considered to be
-            one of the best gym buddies to ever live)
+            In my free time you would catch me playing the guitar, reading
+            books, playing video games, and working out at the gym. (considered
+            to be one of the best gym buddies to ever live)
           </p>
           <motion.div variants={slideFromRight(0.5)}>
             <Link href='/cv.pdf' target='_blank'>
@@ -49,21 +53,9 @@ export default function About() {
   );
 }
 
-const StyledAbout = styled(motion.div)`
+const StyledAbout = styled.div`
   width: 100%;
   padding-bottom: 4rem;
-`;
-
-const StyledBox = styled.div`
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 1rem;
-  border: 1px solid ${(props) => props.theme.main};
-  border-radius: 25px;
-
-  @media (max-width: 500px) {
-    max-width: 95%;
-  }
 `;
 
 const StyledHeader = styled.div`
@@ -80,11 +72,33 @@ const StyledHeader = styled.div`
   }
 `;
 
+const StyledBox = styled.div`
+  margin: 0 auto;
+  padding: 1vmin;
+
+  display: flex;
+  justify-content: center;
+  @media (max-width: 500px) {
+    max-width: 95%;
+  }
+`;
+
+const StyledImage = styled.div`
+  margin-right: 3rem;
+
+  img {
+    object-fit: cover;
+    height: 400px;
+    width: 350px;
+    min-width: 250px;
+  }
+`;
+
 const StyledText = styled.div`
   max-width: 90ch;
-  margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 0rem;
   line-height: 1.5;
+  padding: 1vmin;
 
   img {
     width: 6rem;

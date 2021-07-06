@@ -12,14 +12,14 @@ import { FaLink, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { scrollReveal, slideFromRight } from '../Animations';
 
-export default function Grid() {
+export default function Projects() {
   const [element, controls] = useScrollOnView();
 
   const projects = [
     {
       name: 'Focus Sit',
       description:
-        'All-in-one solution for events and guests management sold to Focus-Event. Built using ReactTS, Nestjs & PostgreSQL.',
+        'All-in-one solution for events and guests management, sold to Focus-Event. Built using ReactTS, Nestjs & PostgreSQL.',
       preview: fsPreview,
       link: 'https://focus-sit.com',
       demo: 'https://www.linkedin.com/posts/david-sharki-925892204_acraclacsacgabracsacpacpadd-activity-6797845525736538112-hr92',

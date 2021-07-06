@@ -72,7 +72,11 @@ function App() {
           windowWidth={windowWidth}
           currentTheme={theme}
         />
-        <Home currentTheme={theme} windowHeight={windowHeight} />
+        <Home
+          currentTheme={theme}
+          windowHeight={windowHeight}
+          windowWidth={windowWidth}
+        />
       </main>
     </ThemeProvider>
   );
