@@ -53,7 +53,7 @@ export default function About({ windowWidth }) {
   );
 }
 
-const StyledAbout = styled.div`
+const StyledAbout = styled(motion.div)`
   width: 100%;
   padding-bottom: 4rem;
 `;
